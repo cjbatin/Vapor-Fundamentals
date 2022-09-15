@@ -1,12 +1,22 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<h1>#(title)</h1>
 
-  <title>#(title)</title>
-</head>
-
-<body>
-  <h1>#(title)</h1>
-</body>
-</html>
+#if(count(rooms) > 0):
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      #for(room in rooms):
+        <tr>
+          <td>#(room.name)</td>
+          <td>#(room.capacity)</td>
+        </tr>
+      #endfor
+    </tbody>
+  </table>
+#else:
+  <h2>There are not any rooms yet!</h2>
+#endif
